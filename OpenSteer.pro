@@ -37,11 +37,7 @@ HEADERS = \
    $$PWD/include/OpenSteer/Utilities.h \
    $$PWD/include/OpenSteer/Vec3.h \
    $$PWD/include/OpenSteer/Vec3Utilities.h \
-   $$PWD/src/TerrainRayTest.h \
-   $$PWD/test/PolylineSegmentedPathTest.h \
-   $$PWD/test/PolylineSegmentedPathwaySingleRadiusTest.h \
-   $$PWD/test/SharedPointerTest.h \
-   $$PWD/win32/resource.h
+   $$PWD/src/TerrainRayTest.h
 
 SOURCES = \
    $$PWD/plugins/Boids.cpp \
@@ -73,17 +69,18 @@ SOURCES = \
    $$PWD/src/SimpleVehicle.cpp \
    $$PWD/src/TerrainRayTest.cpp \
    $$PWD/src/Vec3.cpp \
-   $$PWD/src/Vec3Utilities.cpp \
-   $$PWD/test/PolylineSegmentedPathTest.cpp \
-   $$PWD/test/PolylineSegmentedPathwaySingleRadiusTest.cpp \
-   $$PWD/test/SharedPointerTest.cpp \
-   $$PWD/test/TestMain.cpp
+   $$PWD/src/Vec3Utilities.cpp
 
 INCLUDEPATH = \
-    $$PWD/include/OpenSteer \
+    $$PWD/include \
     $$PWD/src \
     $$PWD/test \
     $$PWD/win32
 
+
 #DEFINES = 
 
+
+unix|win32: LIBS += -lglut
+
+unix|win32: LIBS += -lGLU
